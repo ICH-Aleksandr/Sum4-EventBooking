@@ -1,24 +1,5 @@
 import styles from "./styles.module.css";
 
-const seats = [
-  "A21",
-  "A22",
-  "C14",
-  "C15",
-  "C36",
-  "D23",
-  "D24",
-  "E13",
-  "E14",
-  "E15",
-  "F36",
-  "F37",
-  "K23",
-  "K24",
-  "K25",
-  "K26",
-];
-
 function SeatSelector({ selectedSeats, setSelectedSeats }) {
   const toggleSeat = (seat) => {
     if (selectedSeats.includes(seat)) {
