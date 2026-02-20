@@ -1,11 +1,15 @@
 import styles from "./styles.module.css";
 
-function SeatSelector({ selectedSeats, setSelectedSeats }) {
+function SeatSelector({ seats, selectedSeats, setSelectedSeats }) {
+  if (!seats) return null;
+
   const toggleSeat = (seat) => {
-    if (selectedSeats.includes(seat)) {
-      setSelectedSeats(selectedSeats.filter((item) => item !== seat));
+    if (seat.isSelected) return;
+
+    if (selectedSeats.includes(seat.label)) {
+      setSelectedSeats(selectedSeats.filter((item) => item !== seat.label));
     } else {
-      setSelectedSeats([...selectedSeats, seat]);
+      setSelectedSeats([...selectedSeats, seat.label]);
     }
   };
 
@@ -16,13 +20,11 @@ function SeatSelector({ selectedSeats, setSelectedSeats }) {
       <div className={styles.seats}>
         {seats.map((seat) => (
           <button
-            key={seat}
+            key={seat.id}
+            disabled={seat.isSelected}
             onClick={() => toggleSeat(seat)}
-            className={
-              selectedSeats.includes(seat) ? styles.selected : styles.seat
-            }
           >
-            {seat}
+            {seat.label}
           </button>
         ))}
       </div>
