@@ -1,6 +1,7 @@
 .container {
   margin: 30px;
   max-width: 420px;
+  height: 420px;
   background: #a4d3ff;
   padding: 24px;
   border-radius: 12px;
@@ -9,5 +10,5 @@
     0 10px 20px rgba(0, 0, 0, 0.25);
 }
 .container h4 {
-  margin-bottom: 16px;
+  margin: 16px 0px;
 }
