@@ -1,0 +1,16 @@
+.event {
+  color: rgb(58, 26, 152);
+  margin-left: 70px;
+}
+
+.container {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.image {
+  width: 150px;
+  border-radius: 8px;
+}
