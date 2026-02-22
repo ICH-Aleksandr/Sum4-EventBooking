@@ -1,12 +1,17 @@
-function DateSelector({ dates, selectedDate, onSelect }) {
+import styles from "./styles.module.css";
+
+/* убрал из функции {dates, selectedDate, onSelect } selectedDate т.к. ругалса eslint. selectedDate здесь мы не используем*/
+function DateSelector({ dates, onSelect }) {
   return (
-    <div>
+    <div className={styles.container}>
       <h4>Select date:</h4>
-      {dates.map((item) => (
-        <button key={item.id} onClick={() => onSelect(item)}>
-          {item.date.toLocaleDateString()}
-        </button>
-      ))}
+      <div className={styles.buttonContainer}>
+        {dates.map((item) => (
+          <button key={item.id} onClick={() => onSelect(item)}>
+            {item.date.toLocaleDateString()}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

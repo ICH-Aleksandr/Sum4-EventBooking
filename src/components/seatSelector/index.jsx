@@ -17,12 +17,19 @@ function SeatSelector({ seats, selectedSeats, setSelectedSeats }) {
     <div className={styles.container}>
       <h4>Select seats:</h4>
 
-      <div className={styles.seats}>
+      <div className={styles.buttonContainer}>
         {seats.map((seat) => (
           <button
             key={seat.id}
             disabled={seat.isSelected}
             onClick={() => toggleSeat(seat)}
+            className={
+              seat.isSelected
+                ? styles.disabled
+                : selectedSeats.includes(seat.label)
+                  ? styles.selected
+                  : styles.seat
+            }
           >
             {seat.label}
           </button>
